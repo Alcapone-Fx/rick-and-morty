@@ -7,7 +7,6 @@ import {
 } from '@apollo/client';
 
 import App from './App.tsx';
-import './index.css';
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql/',
