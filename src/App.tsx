@@ -1,20 +1,21 @@
-import { useQuery, gql } from '@apollo/client';
+import Grid from '@mui/material/Grid';
+import Characters from './pages/Characters';
+import Toolbar from './components/Toolbar';
 
-// const GET_CHARACTERS = gql`
-//   query {
-//     characters(page: 2, filter: { name: "rick" }) {
-//       results {
-//         name
-//       }
-//     }
-//   }
-// `;
+import './main.css';
 
 const App = () => {
-  // const { data } = useQuery(GET_CHARACTERS);
-
   return (
     <>
+      <Toolbar />
+      <Grid container>
+        <Grid item xs={3}>
+          Filters
+        </Grid>
+        <Grid item xs={9}>
+          <Characters />
+        </Grid>
+      </Grid>
     </>
   );
 };
