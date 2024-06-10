@@ -9,12 +9,7 @@ const App = () => {
     <>
       <Toolbar />
       <Grid container>
-        <Grid item xs={3}>
-          Filters
-        </Grid>
-        <Grid item xs={9}>
-          <Characters />
-        </Grid>
+        <Characters />
       </Grid>
     </>
   );
