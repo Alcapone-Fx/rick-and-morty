@@ -49,8 +49,12 @@ export const CharacterList = ({
     );
   }
 
-  if (!isLoading && !characters) {
-    return <Typography variant="h4">No characters found</Typography>;
+  if (!isLoading && characters.length === 0) {
+    return (
+      <Box display="flex" justifyContent="center" width="100%">
+        <Typography variant="h4">No characters found</Typography>
+      </Box>
+    );
   }
 
   return (

@@ -1,11 +1,11 @@
 export interface KV {
-  [key: string]: 'primary' | 'error' | 'default';
+  [key: string]: 'primary' | 'error' | 'warning';
 }
 
 export const CHARACTER_STATUS: KV = {
   Alive: 'primary',
   Dead: 'error',
-  unknown: 'default',
+  unknown: 'warning',
 };
 
 export type Character = {

@@ -94,24 +94,26 @@ const Characters: React.FC = () => {
           characters={data?.characters?.results || []}
         />
       </Grid>
-      <Pagination
-        variant="outlined"
-        shape="rounded"
-        size="large"
-        color="primary"
-        sx={{ margin: '2rem auto' }}
-        page={Number(searchParams.get('page')) || 1}
-        count={data?.characters?.info?.pages}
-        onChange={(_: ChangeEvent<unknown>, page: number) => {
-          setSearchParams(
-            buildCharactersInitSearchParams(
-              debouncedSearchValue,
-              searchParams.get('name') || '',
-              String(page),
-            ),
-          );
-        }}
-      />
+      {data?.characters?.info?.pages && (
+        <Pagination
+          variant="outlined"
+          shape="rounded"
+          size="large"
+          color="primary"
+          sx={{ margin: '2rem auto' }}
+          page={Number(searchParams.get('page')) || 1}
+          count={data?.characters?.info?.pages || 0}
+          onChange={(_: ChangeEvent<unknown>, page: number) => {
+            setSearchParams(
+              buildCharactersInitSearchParams(
+                debouncedSearchValue,
+                searchParams.get('name') || '',
+                String(page),
+              ),
+            );
+          }}
+        />
+      )}
     </>
   );
 };
